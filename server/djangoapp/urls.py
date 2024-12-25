@@ -9,7 +9,7 @@ urlpatterns = [
     # # path for registration
 
     # path for login/logout
-    path(route='login', view=views.login_user, name='login'),
+    path(route='login/', view=views.login_user, name='login'),
     path(route='logout/', view=views.logout_request, name='logout'),
     # path for dealer reviews view
 

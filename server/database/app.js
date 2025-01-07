@@ -68,13 +68,33 @@ app.get('/fetchDealers', async (req, res) => {
 
 // Express route to fetch dealerships by a particular state
 app.get('/fetchDealers/:state', async (req, res) => {
-    // Code here
+    const state = req.params.state;
+    try {
+        const dealerships = await Dealerships.find({ state });
+        if (dealerships.length === 0 ) {
+            res.status(404).json({ error: 'No dealerships found in state: ${state}'});
+        } else {
+            res.json(dealerships);
+        }
+    } catch (error) {
+        res.status(500).json({ error: 'Error fetching dealerships by state' });
+    }
   });
 
 // Express route to fetch dealers by ID
 // Correcting the query to match the dealership data
 app.get('/fetchDealer/:id', async (req, res) => {
-    // Code here
+    const id = parseInt(req.params.id, 10); // Parse the ID as an integer
+    try {
+        const dealership = await Dealerships.findOne({ id });
+        if (!dealership) {
+            res.status(404).json({ error: 'No dealership found with ID: ${id}'});
+        } else {
+            res.json(dealership);
+        }
+    } catch (error) {
+        res.status(500).json({ error: 'Error fetching dealership by ID'});
+    }
   });
   
 

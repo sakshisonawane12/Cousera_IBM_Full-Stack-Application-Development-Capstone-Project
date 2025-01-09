@@ -96,7 +96,7 @@ def get_cars(request):
     return JsonResponse({"CarModels": cars})
 
 
-# Update the `get_dealerships` view to render the index page with a list of dealerships
+# Method to get list of dealerships
 def get_dealerships(request, state="All"):
     if state == "All":
         endpoint = "/fetchDealers"
@@ -107,7 +107,7 @@ def get_dealerships(request, state="All"):
         {"status": 200, "dealers": dealerships})
 
 
-# Create a `get_dealer_reviews` view to render the reviews of a dealer
+# Method to view reviews for individual dealer
 def get_dealer_reviews(request, dealer_id):
     # If dealer id has been provided
     if dealer_id:
@@ -115,16 +115,16 @@ def get_dealer_reviews(request, dealer_id):
         reviews = get_request(endpoint)
 
         for review_detail in reviews:
-            # Call analyze_review_sentiments and check if the response is valid
+            # Call analyze_review_sentiments 
+            # check if the response is valid
             response = analyze_review_sentiments(
                 review_detail['review'])
             print(response)
 
-            # Check if the response is not None and contains the 'sentiment' key
             if response is not None and 'sentiment' in response:
                 review_detail['sentiment'] = response['sentiment']
             else:
-                # If there's no sentiment or the response is None, default to 'neutral'
+                # If there's no sentiment, default to 'neutral'
                 review_detail['sentiment'] = 'neutral'
 
         return JsonResponse({"status": 200, "reviews": reviews})

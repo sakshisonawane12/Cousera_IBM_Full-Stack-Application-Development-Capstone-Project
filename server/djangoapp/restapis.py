@@ -43,4 +43,5 @@ def post_review(data_dict):
         print(response.json())
         return response.json()
     except:
-        print("Network exception occurred")
+        print(f"Network exception occurred: {e}")
+        return {"status": 500, "message": "Internal Server Error"}

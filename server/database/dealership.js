@@ -1,11 +1,14 @@
+/* jshint esversion: 6 */
 const mongoose = require('mongoose');
+
 const Schema = mongoose.Schema;
+
 const dealerships = new Schema({
-	id: {
+	    id: {
     type: Number,
     required: true,
 	},
-	city: {
+	    city: {
     type: String,
     required: true
   },
@@ -37,4 +40,5 @@ const dealerships = new Schema({
     required: true
   }
 });
+
 module.exports = mongoose.model('dealerships', dealerships);

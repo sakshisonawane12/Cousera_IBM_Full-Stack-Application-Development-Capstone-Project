@@ -115,7 +115,7 @@ def get_dealer_reviews(request, dealer_id):
         reviews = get_request(endpoint)
 
         for review_detail in reviews:
-            # Call analyze_review_sentiments 
+            # Call analyze_review_sentiments
             # check if the response is valid
             response = analyze_review_sentiments(
                 review_detail['review'])

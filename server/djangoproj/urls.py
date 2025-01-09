@@ -30,12 +30,20 @@ urlpatterns = [
     path('login/', TemplateView.as_view(template_name="index.html")),
     path('register/', TemplateView.as_view(template_name="index.html")),
     path('dealers/', TemplateView.as_view(template_name="index.html")),
-    path('dealer/<int:dealer_id>/', TemplateView.as_view(template_name="index.html")),
-    path('postreview/<int:dealer_id>/',TemplateView.as_view(template_name="index.html")),
+    path(
+        'dealer/<int:dealer_id>/',
+        TemplateView.as_view(template_name="index.html")
+        ),
+    path(
+        'postreview/<int:dealer_id>/',
+        TemplateView.as_view(template_name="index.html")
+        ),
     # Serve the manifest.json file
     re_path(
         r'^manifest.json$',
         serve,
-        {'document_root': os.path.join(settings.BASE_DIR, 'frontend/build'), 'path': 'manifest.json'}
+        {'document_root': os.path.join(
+            settings.BASE_DIR, 'frontend/build'),
+            'path': 'manifest.json'}
     ),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

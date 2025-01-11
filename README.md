@@ -82,56 +82,56 @@ The solution architecture consists of the following components:
    python3 -m pip install -U -r requirements.txt 
    ```
    - Run migrations to set up the database and start development server:
-  ```bash
-  python3 manage.py makemigrations
-  python3 manage.py migrate
-  python3 manage.py runserver
-  ```
+   ```bash
+   python3 manage.py makemigrations
+   python3 manage.py migrate
+   python3 manage.py runserver
+   ```
 4. **Set up the Backend Mongo Express server**
-  - Navigate to the Database directory
-  ```bash
-  cd server/database
-  ```
-  - Build the nodeapp:
-  ```bash
-  docker build . -t nodeapp
-  ```
-  - Start the server:
-  ```bash
-  docker-compose up
-  ```
+   - Navigate to the Database directory
+   ```bash
+   cd server/database
+   ```
+   - Build the nodeapp:
+   ```bash
+   docker build . -t nodeapp
+   ```
+   - Start the server:
+   ```bash
+   docker-compose up
+   ```
 5. **Frontend (React):**
-  - Navigate to the frontend directory and install dependencies:
-  ```bash
-  cd frontend
-  npm install
-  ```
-  - Run the React app:
-  ```bash
-  npm run build
-  ```
+   - Navigate to the frontend directory and install dependencies:
+   ```bash
+   cd frontend
+   npm install
+   ```
+   - Run the React app:
+   ```bash
+   npm run build
+   ```
 6. **Code Engine**:
-To run the Cloud Code Engine service to access Sentiment Analyzer Microservice:
-  - Navigate to Skills Network Toolbox, and under Cloud, find Code Engine.
-  - Start code engine by creating a project.
-  - Once the code engine set up is complete, you can see that it is active. Click on Code Engine CLI to begin the pre-configured CLI in the terminal below.
-  - You will observe that the pre-configured CLI statrup and the home directory is set to the current directory.
-    As a part of the pre-configuration, the project has been set up and Kubeconfig is set up. The details that are shown on the terminal.
-  - Navigate to cd server/djangoapp/microservices
-  - Docker build the sentiment analyzer ap:
-  ```bash
-  docker build . -t us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
-  ```
-  - Push the docker image:
-  ```bash
-  docker push us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
-  ```
-  - Deploy the Senti_analyzer application on code engine
-  - Obtain the URL and add to .env file (no / backslashes) (do the same for the backend after running MongoDB server (Port 3030)
-  ```bash
-  sentiment_analyzer_url=your code engine deployment url
-  backend_url = your backend url
-  ```
+   To run the Cloud Code Engine service to access Sentiment Analyzer Microservice:
+   - Navigate to Skills Network Toolbox, and under Cloud, find Code Engine.
+   - Start code engine by creating a project.
+   - Once the code engine set up is complete, you can see that it is active. Click on Code Engine CLI to begin the pre-configured CLI in the terminal below.
+   - You will observe that the pre-configured CLI statrup and the home directory is set to the current directory.
+     As a part of the pre-configuration, the project has been set up and Kubeconfig is set up. The details that are shown on the terminal.
+   - Navigate to cd server/djangoapp/microservices
+   - Docker build the sentiment analyzer ap:
+   ```bash
+   docker build . -t us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
+   ```
+   - Push the docker image:
+   ```bash
+   docker push us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
+   ```
+   - Deploy the Senti_analyzer application on code engine
+   - Obtain the URL and add to .env file (no / backslashes) (do the same for the backend after running MongoDB server (Port 3030)
+   ```bash
+   sentiment_analyzer_url=your code engine deployment url
+   backend_url = your backend url
+   ```
 
 ## CI / CD
 - Workflow is created to lint files to meet PEP8 guidelines. When code is pushed to the repository, the workflow will automatically begin to lint the Python and JavaScript files.

@@ -81,13 +81,13 @@ The solution architecture consists of the following components:
    ```bash
    python3 -m pip install -U -r requirements.txt 
    ```
-  - Run migrations to set up the database and start development server:
+   - Run migrations to set up the database and start development server:
   ```bash
   python3 manage.py makemigrations
   python3 manage.py migrate
   python3 manage.py runserver
   ```
-4. **Set up the Backend Mongo Express server**
+5. **Set up the Backend Mongo Express server**
   - Navigate to the Database directory
   ```bash
   cd server/database
@@ -100,7 +100,7 @@ The solution architecture consists of the following components:
   ```bash
   docker-compose up
   ```
-5. **Frontend (React):**
+6. **Frontend (React):**
   - Navigate to the frontend directory and install dependencies:
   ```bash
   cd frontend
@@ -110,7 +110,7 @@ The solution architecture consists of the following components:
   ```bash
   npm run build
   ```
-6. **Code Engine**:
+7. **Code Engine**:
 To run the Cloud Code Engine service to access Sentiment Analyzer Microservice:
   - Navigate to Skills Network Toolbox, and under Cloud, find Code Engine.
   - Start code engine by creating a project.

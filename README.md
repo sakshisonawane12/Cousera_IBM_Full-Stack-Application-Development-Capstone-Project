@@ -23,6 +23,7 @@ A comprehensive web platform for browsing car dealerships and managing customer 
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Python 3.8+
 - Node.js 14+
 - Docker
@@ -31,24 +32,28 @@ A comprehensive web platform for browsing car dealerships and managing customer 
 ### Installation
 
 1. **Clone Repository**
+
 ```bash
 git clone https://github.com/yourusername/dealerships-review-portal-india.git
 cd dealerships-review-portal-india
 ```
 
 2. **Start Django Backend**
+
 ```bash
 cd server
 py manage.py runserver
 ```
 
 3. **Start MongoDB Service** (New Terminal)
+
 ```bash
 cd server/database
 docker-compose up
 ```
 
 4. **Start React Frontend** (New Terminal)
+
 ```bash
 cd server/frontend
 npm install
@@ -56,6 +61,7 @@ npm start
 ```
 
 ### Access Points
+
 - **Frontend**: http://localhost:3000
 - **Django Admin**: http://localhost:8000/admin
 - **API**: http://localhost:3030
@@ -75,6 +81,7 @@ npm start
 ## 🇮🇳 Indian Market Focus
 
 This application is specifically designed for the Indian automotive market, featuring:
+
 - Indian state-wise dealership filtering
 - Local currency support (₹)
 - Regional language support potential
@@ -83,6 +90,7 @@ This application is specifically designed for the Indian automotive market, feat
 ## 🔧 Environment Setup
 
 Create `.env` file in server directory:
+
 ```env
 sentiment_analyzer_url=your_code_engine_url
 backend_url=http://localhost:3030
@@ -102,7 +110,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- **Sakshi** - *Full Stack Developer*
+- **Sakshi** - _Full Stack Developer_
 
 ## 🙏 Acknowledgments
 
@@ -119,4 +127,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Mahindra
 - Honda
 - Toyota
-- And many more...

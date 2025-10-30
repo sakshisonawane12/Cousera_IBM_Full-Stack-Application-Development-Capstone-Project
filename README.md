@@ -1,0 +1,2 @@
+# Cousera_IBM_Full-Stack-Application-Development-Capstone-Project
+Dealerships Review Portal is a full-stack web application that allows customers to browse car dealerships and read/write reviews. Built with Django backend, React frontend, Node.js API, and MongoDB database, it features user authentication, sentiment analysis, and responsive design for seamless dealership discovery and review management.

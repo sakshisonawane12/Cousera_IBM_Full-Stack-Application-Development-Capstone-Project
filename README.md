@@ -34,7 +34,7 @@ A comprehensive web platform for browsing car dealerships and managing customer 
 1. **Clone Repository**
 
 ```bash
-git clone https://github.com/yourusername/dealerships-review-portal-india.git
+git clone https://github.com/sakshisonawane12/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project.git
 cd dealerships-review-portal-india
 ```
 

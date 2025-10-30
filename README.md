@@ -1,148 +1,122 @@
-# Dealerships Review Portal - Fullstack Software Developer Capstone Project
-by Sierra Ripoche
+# 🚗 Dealerships Review Portal - India
 
-## Overview
+A comprehensive web platform for browsing car dealerships and managing customer reviews across India.
 
-This project is the final capstone for the **Fullstack Software Developer** certification course. The goal of this project is to develop a web application for a national car dealership with branches across the United States, enabling users to view dealership information and leave reviews for each branch. This project leverages various technologies including **Django**, **React**, **Node.js**, **MongoDB**, **Docker**, and **IBM Cloud**.
+## 🌟 Features
 
-### Project Background
+- **Browse Dealerships**: View dealerships by state with detailed information across India
+- **User Authentication**: Secure login/register system
+- **Review System**: Read and write dealership reviews
+- **Sentiment Analysis**: AI-powered review sentiment detection
+- **Responsive Design**: Mobile-friendly interface
+- **State-wise Filtering**: Filter dealerships by Indian states
 
-A market survey conducted by the car dealership company revealed a strong interest from customers in a centralized platform where they could view reviews of dealerships nationwide. The goal is to provide transparency and increase customer trust in the dealership network by enabling users to read reviews and submit their own.
+## 🛠️ Tech Stack
 
-### Key Features
+- **Frontend**: React.js
+- **Backend**: Django (Python)
+- **API**: Node.js/Express
+- **Database**: MongoDB + SQLite
+- **Containerization**: Docker
+- **Cloud**: IBM Cloud Code Engine
 
-- **Anonymous Users**: View dealership details and reviews.
-- **Authorized Users**: Log in, submit reviews, and view reviews for each dealership.
-- **Admin Users**: Manage dealership information, including adding car makes, models, and other attributes.
-- **Sentiment Analysis**: Analyze the sentiment of customer reviews using an IBM Cloud-based sentiment analyzer service.
+## 🚀 Quick Start
 
-## Technologies Used
+### Prerequisites
+- Python 3.8+
+- Node.js 14+
+- Docker
+- Git
 
-- **Django**: Backend web framework to manage dealership data, user authentication, and reviews.
-- **React**: Frontend framework for building dynamic user interfaces.
-- **Node.js**: Server to handle dealership and review data with MongoDB.
-- **MongoDB**: Database used to store dealership and review data.
-- **Docker**: Containerization technology for packaging the application and services.
-- **IBM Cloud Code Engine**: Cloud platform to deploy the sentiment analysis service.
-- **CI/CD**: Continuous Integration and Continuous Deployment pipeline for efficient code management and delivery.
+### Installation
 
-## Architecture
+1. **Clone Repository**
+```bash
+git clone https://github.com/yourusername/dealerships-review-portal-india.git
+cd dealerships-review-portal-india
+```
 
-The solution architecture consists of the following components:
+2. **Start Django Backend**
+```bash
+cd server
+py manage.py runserver
+```
 
-1. **Dealerships Website (Django)**:
-   - Microservices for managing dealerships, car models, reviews, and user authentication.
-   - Interaction with a MongoDB database through a proxy service.
+3. **Start MongoDB Service** (New Terminal)
+```bash
+cd server/database
+docker-compose up
+```
 
-2. **Dealerships and Reviews Service (Node.js/Express)**:
-   - Microservice to handle CRUD operations for dealers and reviews.
-   - Hosted in a Docker container for easy deployment.
+4. **Start React Frontend** (New Terminal)
+```bash
+cd server/frontend
+npm install
+npm start
+```
 
-3. **Sentiment Analyzer (IBM Cloud Code Engine)**:
-   - Analyzes the sentiment of review text (positive, negative, or neutral).
+### Access Points
+- **Frontend**: http://localhost:3000
+- **Django Admin**: http://localhost:8000/admin
+- **API**: http://localhost:3030
 
-4. **Database**:
-   - **SQLite** for storing car make and model data in Django.
-   - **MongoDB** for storing dealer and review data in the Node.js service.
+## 📁 Project Structure
 
-## User Stories
+```
+├── server/
+│   ├── djangoapp/          # Django backend
+│   ├── frontend/           # React frontend
+│   ├── database/           # MongoDB setup
+│   └── requirements.txt    # Python dependencies
+├── README.md
+└── .gitignore
+```
 
-### Anonymous Users
-- View the **Contact Us** and **About Us** pages.
-- View a list of dealerships across the United States, with the ability to filter by state.
-- View reviews for each dealership.
+## 🇮🇳 Indian Market Focus
 
-### Authorized Users
-- In addition to anonymous features, authorized users can:
-  - Submit reviews for any dealership.
-  - Submit a review which will appear at the top of the list of reviews on the dealership detail page.
+This application is specifically designed for the Indian automotive market, featuring:
+- Indian state-wise dealership filtering
+- Local currency support (₹)
+- Regional language support potential
+- Indian automotive brands integration
 
-### Admin Users
-- Log into the admin interface to manage dealership data.
-- Add new makes, models, and other attributes for dealerships.
+## 🔧 Environment Setup
 
-## Installation Instructions
+Create `.env` file in server directory:
+```env
+sentiment_analyzer_url=your_code_engine_url
+backend_url=http://localhost:3030
+```
 
-1. **Clone the repository**:
+## 🤝 Contributing
 
-   ```bash
-   git clone https://github.com/SiRipo92/Fullstack_Dev_Capstone_Project
-   cd Fullstack_Dev_Capstone_Project
-   ```
-2. **Set up virtual environment**
-   ```bash
-   cd Fullstack_Dev_Capstone_Project/server
-   pip install virtualenv
-   virtualenv djangoenv
-   source djangoenv/bin/activate
-   ```
-3. **Set up Django Backend**
-   - Install Python dependencies :
-   ```bash
-   python3 -m pip install -U -r requirements.txt 
-   ```
-   - Run migrations to set up the database and start development server:
-   ```bash
-   python3 manage.py makemigrations
-   python3 manage.py migrate
-   python3 manage.py runserver
-   ```
-4. **Set up the Backend Mongo Express server**
-   - Navigate to the Database directory
-   ```bash
-   cd server/database
-   ```
-   - Build the nodeapp:
-   ```bash
-   docker build . -t nodeapp
-   ```
-   - Start the server:
-   ```bash
-   docker-compose up
-   ```
-5. **Frontend (React):**
-   - Navigate to the frontend directory and install dependencies:
-   ```bash
-   cd frontend
-   npm install
-   ```
-   - Run the React app:
-   ```bash
-   npm run build
-   ```
-6. **Code Engine**:
-   To run the Cloud Code Engine service to access Sentiment Analyzer Microservice:
-   - Navigate to Skills Network Toolbox, and under Cloud, find Code Engine.
-   - Start code engine by creating a project.
-   - Once the code engine set up is complete, you can see that it is active. Click on Code Engine CLI to begin the pre-configured CLI in the terminal below.
-   - You will observe that the pre-configured CLI statrup and the home directory is set to the current directory.
-     As a part of the pre-configuration, the project has been set up and Kubeconfig is set up. The details that are shown on the terminal.
-   - Navigate to cd server/djangoapp/microservices
-   - Docker build the sentiment analyzer ap:
-   ```bash
-   docker build . -t us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
-   ```
-   - Push the docker image:
-   ```bash
-   docker push us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
-   ```
-   - Deploy the Senti_analyzer application on code engine
-   - Obtain the URL and add to .env file (no / backslashes) (do the same for the backend after running MongoDB server (Port 3030)
-   ```bash
-   sentiment_analyzer_url=your code engine deployment url
-   backend_url = your backend url
-   ```
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
 
-## CI / CD
-- Workflow is created to lint files to meet PEP8 guidelines. When code is pushed to the repository, the workflow will automatically begin to lint the Python and JavaScript files.
+## 📝 License
 
-## Deployment 
-1. Kubernetes: Deploy the application and its microservices on Kubernetes for scalability.
-2. IBM Cloud: Deploy the Sentiment Analyzer microservice on IBM Cloud Code Engine.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Contributors: 
-- Upkar Lidder - Lead Full-Stack Software Developer
-- Lavanya - Full-Stack Developer
-- Yan Luo - Backend Developer
-- Priya - Frontend Developer
-- **Sierra Ripoche - Full-Stack Developer**
+## 👥 Authors
+
+- **Sakshi** - *Full Stack Developer*
+
+## 🙏 Acknowledgments
+
+- IBM Cloud for sentiment analysis services
+- Indian automotive industry insights
+- Course instructors and mentors
+- Open source community
+
+## 🚗 Supported Indian Car Brands
+
+- Maruti Suzuki
+- Hyundai
+- Tata Motors
+- Mahindra
+- Honda
+- Toyota
+- And many more...

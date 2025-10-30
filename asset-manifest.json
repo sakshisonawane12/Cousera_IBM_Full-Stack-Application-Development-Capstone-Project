@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/static/css/main.d7f0f549.css",
+    "main.js": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/static/js/main.5e3dbf3c.js",
+    "static/media/password.png": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/static/media/password.adcd6e686448d893855c.png",
+    "static/media/email.png": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/static/media/email.66cf52f2342f17f1f491.png",
+    "static/media/person.png": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/static/media/person.7419e33fa2e0a06c620d.png",
+    "static/media/reviewbutton.png": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/static/media/reviewbutton.d450bab8bc6468d9fb28.png",
+    "static/media/negative.png": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/static/media/negative.e7f6df651a8b8e85f293.png",
+    "static/media/positive.png": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/static/media/positive.4aa3d05c6e13ba380a17.png",
+    "static/media/neutral.png": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/static/media/neutral.84adb1c83d738945f381.png",
+    "static/media/reviewicon.png": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/static/media/reviewicon.7d906bac2946fa1dc23d.png",
+    "index.html": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/index.html",
+    "main.d7f0f549.css.map": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/static/css/main.d7f0f549.css.map",
+    "main.5e3dbf3c.js.map": "/Cousera_IBM_Full-Stack-Application-Development-Capstone-Project/static/js/main.5e3dbf3c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d7f0f549.css",
+    "static/js/main.5e3dbf3c.js"
+  ]
+}
